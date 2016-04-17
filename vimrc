@@ -11,7 +11,12 @@ set softtabstop=4	"设置tab键为4位，按退格键时可以一次删掉4个�
 "set ignorecase smartcase	" 搜索时忽略大小写，但在有一个或以上大写字母时仍保持对大小写敏感
 "set wrap	"显示时自动换行
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif	"保存上次浏览的位置
-set term=screen "tmux中vim主题显示不正常，需要在.bashrc文件中添加export TERM="linux"，.tmux.conf中添加set term=screen
+set term=screen "tmux中vim主题显示不正常，需要在.bashrc文件中添加export TERM="linux"(export TERM="xterm-256color")，.tmux.conf中添加set -g default-terminal "screen-256color"
+set foldmethod=indent "设置折叠
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936	"设置编码
+set termencoding=utf-8
+set encoding=utf-8
+set paste
 
 
 "**********************	*************	**********************
