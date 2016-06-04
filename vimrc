@@ -17,6 +17,7 @@ set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936	"设置编码
 set termencoding=utf-8
 set encoding=utf-8
 set paste
+set viminfo='2000,<4000
 
 
 "**********************	*************	**********************
@@ -50,6 +51,8 @@ Plugin 'majutsushi/tagbar'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 Plugin 'winmanager'
+Plugin 'taglist.vim'
+Plugin 'cscope.vim'
 
 " Git plugin not hosted on GitHub
 "Plugin 'git://git.wincent.com/command-t.git'
@@ -97,6 +100,7 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeDirArrowExpandable = '?'
 let g:NERDTreeDirArrowCollapsible = '?'
+let NERDTreeWinSize=25
 
 """"""""""""""""""""""	Winmanager	"""""""""""""""""""""" 
 map <c-w><c-f> :FirstExplorerWindow<cr> 
@@ -104,19 +108,20 @@ map <c-w><c-b> :BottomExplorerWindow<cr>
 map <c-w><c-t> :WMToggle<cr> 
 let g:AutoOpenWinManager=1
 "let g:winManagerWindowLayout="Tagbar|FileExplorer,BufExplorer"
-let g:winmanagerWidth=30
+let g:winmanagerWidth=25
 
 """"""""""""""""""""""	Taglist	"""""""""""""""""""""" 
 let Tlist_Show_One_File=1
-let Tlist_WinWidth=30
+let Tlist_WinWidth=25
 let Tlist_Exit_OnlyWindow=1
 let Tlist_Use_Right_Window=1
 
 """"""""""""""""""""""	Tagbar	"""""""""""""""""""""" 
-nmap <F8> :TagbarToggle<CR>
+"nmap <F8> :TagbarToggle<CR>
+nmap <c-p> :TagbarToggle<CR>
 "let g:tagbar_left = 1                                "左侧                                              
 let g:tagbar_right = 1                                "右侧                                              
-let g:tagbar_width = 30                               "宽度
+let g:tagbar_width = 25                               "宽度
 
 "**********************	*************	********************** 
 "**********************	Vundle Plugin	********************** 
